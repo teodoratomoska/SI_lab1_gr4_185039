@@ -1,3 +1,34 @@
+import java.util.List;
+
+class Canvas {
+	List<Point> points;
+	
+	public Canvas() {
+		points = new ArrayList();
+	}
+	
+	public void addPoint(Point point) {
+		points.add(point);
+	}
+	
+	public void removePoint(int index) {
+		points.remove(index);
+	}
+	
+	public void moveAllPoints(char xDirection, char yDirection) {
+		for (int i = 0; i < points.size(); i++) {
+			points.get(i).move(xDirection, yDirection);
+		}
+	}
+	
+	public void printAllPoints() {
+		for (int i = 0; i < points.size(); i++) {
+			points.get(i).draw();
+		}
+	}
+}
+
+
 class Point {
 	String id
 	double x,y;
